@@ -1,0 +1,35 @@
+<?php
+
+return [
+
+    'admins'=>'Admins',
+    'users'=>'Users',
+    'users-types'=>'Users Types',
+    'general'=>'General',
+    'countries'=>'Countries',
+    'states'=>'States',
+    'cities'=>'Cities',
+    'categories'=>'Categories',
+    'courses'=>'Courses',
+    'teachers'=>'Teachers',
+    'students'=>'Students',
+    'marks'=>'Marks',
+    'courses-users'=>'Students Marks',
+    'faculties'=>'Faculties',
+    'universities'=>'Universities',
+    'faculties-universities'=>'Faculties',
+    'news'=>'News',
+    'decisions'=>'Decisions',
+    'study-years'=>'Study Years',
+    'graduations'=>'Graduations',
+    'failures'=>'Failures',
+    'semesters'=>'Semesters',
+    'file_user'=>'Extra Files',
+    'differentiation'=>'Differentiation',
+    'subjects'=>'Subjects',
+    'collimated'=>'Collimated',
+    'public'=>'Public',
+    'acceptance'=>'Acceptance',
+    'menu-items'=>'Menu Items',
+    'public-differentiation'=>'Public Differentiation'
+];

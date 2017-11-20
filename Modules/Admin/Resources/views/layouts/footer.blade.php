@@ -1,0 +1,3 @@
+<footer id="footer">
+    <span>&copy; 2017 - Angle</span>
+</footer>

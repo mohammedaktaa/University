@@ -1,0 +1,1 @@
+<li class="@if(Route::current()->getName()==$name){{ 'current' }}@endif"><a href="@if($name) # @else {{  route($name) }} @endif"><div>{{ $text }}</div></a></li>
