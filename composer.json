@@ -37,7 +37,8 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "Modules\\": "Modules/"
+            "Modules\\": "Modules/",
+            "Aut\\DataTable\\": "vendor/Aut/DataTable/src"
         }
     },
     "autoload-dev": {
@@ -62,11 +63,11 @@
             "php artisan key:generate"
         ],
         "post-install-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postInstall",
+            
             "php artisan optimize"
         ],
         "post-update-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+            
             "php artisan ide-helper:generate",
             "php artisan ide-helper:meta",
             "php artisan optimize"
