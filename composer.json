@@ -37,8 +37,7 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "Modules\\": "Modules/",
-            "Aut\\DataTable\\": "vendor/Aut/DataTable/src"
+            "Modules\\": "Modules/"
         }
     },
     "autoload-dev": {

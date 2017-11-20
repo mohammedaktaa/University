@@ -73,6 +73,8 @@ use Modules\General\Entities\StudyYear;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereRegisterDate($value)
  * @method static \Illuminate\Database\Query\Builder|\App\User withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\User withoutTrashed()
+ * @property string|null $graduation_date
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereGraduationDate($value)
  */
 class User extends Authenticatable
 {
