@@ -120,7 +120,9 @@ var rFactor = function () {
     return Math.round(Math.random() * 100);
 };
 function _scroll() {
-    $('.wrapper').each('.scroll').niceScroll();
+    $('.wrapper').find('.scroll').each(function () {
+      $(this).niceScroll();
+    })
 }
 function _bar_chart(datas) {
     var labels = [];
@@ -179,7 +181,10 @@ function _bar_chart(datas) {
         }
     });
 }
-
+function _edit($this) {
+    var $this=$($this);
+    console.log($this);
+}
 function _ajax_load_page() {
     $('.wrapper').on('click', '.ajax', function (e) {
         e.preventDefault();

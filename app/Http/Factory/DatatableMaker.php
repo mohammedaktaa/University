@@ -718,6 +718,7 @@ class DatatableMaker extends BaseDataTableMaker
             ->queryDatatable($query)
             ->queryDeleteButton('menu_item_id')
             ->queryUpdateButton('menu_item_id')
+            ->queryCustomButton('edit','menu_item_id','icon-book','',"onClick='_edit(this)' href='javascript:void(0)'")
             ->queryAddColumn('is_root_view', function ($item) {
                 return $this->yesNo[$item->is_root];
             })
@@ -735,6 +736,7 @@ class DatatableMaker extends BaseDataTableMaker
             ->addInputText(trans('app.classes'), 'classes', 'classes', '')
             ->addSelect($this->yesNo,trans('app.is_root') , 'is_root', 'is_root', 'is_root_view',' req required')
             ->addAutocomplete('admin/menu-item-autocomplete', trans('app.parent'), 'parent_id', 'parent.name_' . \App::getLocale(), 'parent.name_' . \App::getLocale(), '')
+            ->addActionButton('Edit','edit','edit')
             ->addActionButton($this->update, 'update', 'update')
             ->addActionButton($this->delete, 'delete', 'delete')
             ->addNavButton([])
