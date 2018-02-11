@@ -8,7 +8,7 @@
             <div class="content-wrapper">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-9" style="">
+                        <div class="col-lg-10" style="">
                             <div id="panelDemo1" class="panel panel-dark">
                                 <div class="panel-heading ">{{str_replace_first( '-',' ',trans("admin::menu.$table"))}}
                                     <a href="#" data-tool="panel-collapse" data-toggle="tooltip" title=""
@@ -50,8 +50,8 @@
         {{--</div>--}}
 @endsection
 @section('modal')
-    @if($hasExtra)
-        @include("admin::table-extras.$tableName")
+    @if(view()->exists('admin::table-extras.'.$table.'-table'))
+        @include('admin::table-extras.'.$table.'-table')
     @endif
 
 @endsection

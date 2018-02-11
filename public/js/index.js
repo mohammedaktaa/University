@@ -11,14 +11,6 @@ $(function () {
         });
         $('.loaders1').fadeIn(2000);
     });
-    $('body').niceScroll({
-        cursorcolor: "#FF2834",
-        cursorwidth: "5px",
-        zindex: 9999999,
-        background: "rgba(20,20,20,0.7)",
-        cursorborder: "1px solid #FF2834",
-        cursorborderradius: 10
-    });//{cursorborder:"",cursorcolor:"#FF2834",boxzoom:true}
     $(document).ajaxStop(function () {
         $(this).unbind("ajaxStart");
         $('.loader').fadeOut(2000);
@@ -60,11 +52,18 @@ var _notifyMsg = function (type, msg, position) {
     })
 }
 
+function _ajaxLoadHeader() {
+    var url=baseUrl+'header-update';
+    $('.aside').load(url,function () {
+
+    })
+}
+
 function _loadEvents($container, callback) {
     if (null == $container) $container = $('.wrapper');
     _validate($container, callback); // Dynamic ajax validation
     _ajax_load_page();
-    _scroll();
+    // _scroll();
     _editable($container); // Dynamic editable
     _imageUpload($container);  // Dynamic image Uploads
     _imageCropUpload($container);
@@ -181,9 +180,17 @@ function _bar_chart(datas) {
         }
     });
 }
-function _edit($this) {
-    var $this=$($this);
-    console.log($this);
+function _edit($thiss) {
+    var $this=$($thiss);
+    var obj = _aut_datatable_getSelectedRow(_aut_datatable_getTableObjectApi('#'+$this.closest('table').attr('id')), $(($this).closest('tr')));
+    console.log(obj)
+    var th = $this.closest('table').find('th').eq( $this.cellIndex );
+
+    $this.closest('tr').find('td').each(function(){
+        $(this).hide();
+        $(this).closest('table').find('thead').find('th').eq($(this).closest('td').index())
+        $(this).append('<input type="text" name="" class="fom-control">')
+    })
 }
 function _ajax_load_page() {
     $('.wrapper').on('click', '.ajax', function (e) {

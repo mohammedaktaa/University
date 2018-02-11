@@ -103,6 +103,7 @@ return [
     'order'=>'Order',
     'total_required'=>'Total Required',
     'years_slider'=>'Choose Years',
-    'differentiation'=>'Differentiation'
+    'differentiation'=>'Differentiation',
+    'chart'=>'Chart',
 
 ];

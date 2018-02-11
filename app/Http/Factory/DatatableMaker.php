@@ -718,7 +718,7 @@ class DatatableMaker extends BaseDataTableMaker
             ->queryDatatable($query)
             ->queryDeleteButton('menu_item_id')
             ->queryUpdateButton('menu_item_id')
-            ->queryCustomButton('edit','menu_item_id','icon-book','',"onClick='_edit(this)' href='javascript:void(0)'")
+            ->queryCustomButton('edit','menu_item_id','icon-book','',"onClick='_edit($(this))' href='javascript:void(0)'")
             ->queryAddColumn('is_root_view', function ($item) {
                 return $this->yesNo[$item->is_root];
             })
@@ -739,6 +739,9 @@ class DatatableMaker extends BaseDataTableMaker
             ->addActionButton('Edit','edit','edit')
             ->addActionButton($this->update, 'update', 'update')
             ->addActionButton($this->delete, 'delete', 'delete')
+            ->onAdd('_ajaxLoadHeader();')
+            ->onUpdate('_ajaxLoadHeader()')
+            ->onDelete('_ajaxLoadHeader()')
             ->addNavButton([])
             ->render();
     }

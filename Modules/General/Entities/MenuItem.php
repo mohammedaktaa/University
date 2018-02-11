@@ -31,7 +31,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\General\Entities\MenuItem whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class MenuItem extends Model
+class MenuItem extends \Eloquent
 {
     protected $fillable = ['name_en', 'name_ar', 'parent_id', 'is_root','target','classes','order'];
     protected $primaryKey = "menu_item_id";

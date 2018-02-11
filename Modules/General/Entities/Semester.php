@@ -21,7 +21,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\Modules\General\Entities\Semester whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class Semester extends Model
+class Semester extends \Eloquent
 {
     protected $fillable=['name_en','name_ar'];
 

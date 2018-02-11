@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Modules\General\Entities\MenuItem;
+use Modules\General\Entities\Semester;
 
 class HomeController extends Controller
 {
@@ -22,9 +24,20 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users=User::all();
-        return view('home',compact('users'));
+     $this->validate($request,[
+         'name_en'=>'required',
+         'name_ar'=>'required'
+     ]);
+        $seme=Semester::create($request->all());
+        return response()->json($seme);
+    }
+
+    public function headerUpdate()
+    {
+        $menuItems = MenuItem::orderBy('order')->with(['parent','children'])->orderBy('is_root')->orderBy('order')->get();
+
+        return view('admin::layouts.aside',['menuItems'=>$menuItems]);
     }
 }

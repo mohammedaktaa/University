@@ -89,6 +89,7 @@
 <script src="{{asset('js/app/owl.carousel.min.js')}}"></script>
 <script src="{{asset('vendor/jquery.steps/build/jquery.steps.js')}}"></script>
 <script src="{{asset('js/app/custom.js')}}"></script>
+<script src="{{asset('js/jquery.nicescroll.js')}}"></script>
 <script src="{{asset('js/vue.js')}}"></script>
 <script src="{{asset('js/test.js')}}"></script>
 {{--<script src="https://unpkg.com/vue@2.4.4/dist/vue.js"></script>--}}

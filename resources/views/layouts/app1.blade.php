@@ -57,7 +57,7 @@
 </div>
 <a class="go-top go-top-circle" href="javascript:void(0)" style="bottom: -44px; opacity: 0;"> <i
             class="fa fa-angle-up"></i> </a>
-<script src="{{asset('js/app/jquery.min.js')}}"></script>
+<script src="{{asset('js/jquery.js')}}"></script>
 <script>
     var dir = "{{$dir}}";
     var update = "";
@@ -86,11 +86,15 @@
 <script src="{{asset('js/bootstrap-datepicker.min.js')}}"></script>
 <script src="{{asset('js/bootstrap-notify.js')}}"></script>
 <script src="{{asset('js/sweetalert.min.js')}}"></script>
+<script src="{{asset('js/jquery.nicescroll.js')}}"></script>
+
 
 @yield('js')
 <script type="text/javascript" src="{{ asset('js/fullcalendar.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/locale-all.js') }}"></script>
-
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script type="text/javascript" src="{{asset('js/index.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/vue.js')}}"></script>
+<script type="module" src="{{asset('js/test.js')}}"></script>
 </body>
 </html>

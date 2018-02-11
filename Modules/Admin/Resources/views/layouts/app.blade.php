@@ -38,10 +38,35 @@
     <link rel="stylesheet" href="{{asset('css/loader.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('css/bootstrap-slider.min.css')}}" type="text/css">
     <style>
-        body {
-            font-family: "Source Sans Pro", "JF Flat Regular" !important;
+        @font-face {
+            font-family: "omar";
+            src: url('../../../../../fonts/EUROCAPS.ttf');
         }
 
+        @font-face {
+            font-family: "arabic";
+            src: url('../../../../../fonts/arabic.ttf');
+        }
+        @if($dir=='rtl')
+         * {
+            font-family: 'arabic';
+        }
+
+        body {
+            font-family: 'arabic';
+            text-transform: none !important;
+        }
+
+        @else
+        * {
+            font-family: 'omar';
+        }
+
+        body {
+            font-family: 'omar';
+            text-transform: none !important;
+        }
+        @endif
     </style>
 </head>
 <body class="">
@@ -60,7 +85,7 @@
 </div>
 <div class="wrapper">
     @include('admin::layouts.header')
-    <section id="content">
+    <section id="content" style="background-color: #f5f7fa">
         <div class="loaders" hidden>
             <div class="ball-pulse-sync">
                 <div></div>
@@ -68,7 +93,7 @@
                 <div></div>
             </div>
         </div>
-        <div id="content-ajax" class=""style="min-height: 100vh">
+        <div id="content-ajax" class="" style="min-height: 100vh">
             @yield('content')
         </div>
     </section>
@@ -76,9 +101,9 @@
     @include('admin::layouts.footer')
 </div>
 <!-- =============== VENDOR SCRIPTS ===============-->
+<script src="{{asset('js/jquery.js')}}"></script>
 <script src="{{asset('vendor/modernizr/modernizr.custom.js')}}"></script>
 <script src="{{asset('vendor/matchMedia/matchMedia.js')}}"></script>
-<script src="{{asset('vendor/jquery/dist/jquery.js')}}"></script>
 <script src="{{asset('js/jquery.history.js?v=2')}}"></script>
 <script src="{{asset('js/jquery.history.min.js')}}"></script>
 <script src="{{asset('js/jquery.nestable.js')}}"></script>

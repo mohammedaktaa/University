@@ -111,6 +111,7 @@ return [
     'order'=>'الترتيب',
     'total_required'=>'المجموع المطلوب',
     'years_slider'=>'حدد السنوات',
-    'differentiation'=>'المفاضلة'
+    'differentiation'=>'المفاضلة',
+    'chart'=>'المخطط'
 
 ];
